@@ -1,6 +1,9 @@
 import { useFavorites } from '../context/FavoriteContext';
 import { RecipeCard } from '../components/RecipeCard';
 
+/**
+ * Displays favorites meals
+ */
 export const Favorites = () => {
   const { favorites } = useFavorites();
   return (

@@ -2,6 +2,9 @@ import { createContext, useContext, type ReactNode } from 'react';
 import type { Meal } from '../types';
 import { useLocalStorage } from '../hooks/UseLocalStorage';
 
+/**
+ * Create context and provide logic for adding and removing favorites
+ */
 const FavoriteContext = createContext<{
   favorites: Meal[];
   addFavorite: (meal: Meal) => void;

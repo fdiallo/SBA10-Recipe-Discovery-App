@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 
+
+/**
+ * Handles API calls, loading states, and error catching.
+ */
 export const useFetch = <T>(url: string) => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);

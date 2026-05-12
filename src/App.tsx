@@ -6,6 +6,9 @@ import { RecipeDetails } from './pages/RecipeDetails';
 import { Favorites } from './pages/Favorites';
 import { FavoriteProvider } from './context/FavoriteContext';
 
+/**
+ * Define the appropriate route for each request usind the context provider
+ */
 function App() {
   return (
     <FavoriteProvider>

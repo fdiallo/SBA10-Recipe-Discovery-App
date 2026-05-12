@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * Use localstorage for data persistance
+ */
 export const useLocalStorage = <T>(key: string, initialValue: T) => {
   const [value, setValue] = useState<T>(() => {
     const stored = localStorage.getItem(key);
@@ -12,23 +15,3 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
 
   return [value, setValue] as const;
 };
-
-
-// import { useState, useEffect } from 'react';
-
-// export const useLocalStorage = <T>(key: string, initialValue: T) => {
-//   const [storedValue, setStoredValue] = useState<T>(() => {
-//     try {
-//       const item = window.localStorage.getItem(key);
-//       return item ? JSON.parse(item) : initialValue;
-//     } catch (error) {
-//       return initialValue;
-//     }
-//   });
-
-//   useEffect(() => {
-//     window.localStorage.setItem(key, JSON.stringify(storedValue));
-//   }, [key, storedValue]);
-
-//   return [storedValue, setStoredValue] as const;
-// };

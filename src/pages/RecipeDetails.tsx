@@ -1,6 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useFetch } from '../hooks/UseFetch';
 
+/**
+ * Call useFetch hook to fetch the full receipe info and displays it
+ */
 export const RecipeDetails = () => {
   const { id } = useParams();
   const { data, loading } = useFetch<any>(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
