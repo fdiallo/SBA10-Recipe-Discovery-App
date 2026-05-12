@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from 'react';
 
 export const useFetch = <T>(url: string) => {
   const [data, setData] = useState<T | null>(null);
@@ -11,20 +10,14 @@ export const useFetch = <T>(url: string) => {
       setLoading(true);
       try {
         const response = await fetch(url);
-        console.log("API Response: ", response)
-        console.log("API OKAY: ", response.ok)
-        console.log("API BODY: ", response.body)
-        if (!response.ok) throw new Error('Network response was not ok');
-        const result = await response.json();
-        console.log("API Result: ", result)
+        const result = await response.json()
         setData(result);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
+        setError('Error fetching data');
       } finally {
         setLoading(false);
       }
     };
-
     fetchData();
   }, [url]);
 

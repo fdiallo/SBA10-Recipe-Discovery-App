@@ -1,21 +1,20 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Home } from './components/pages/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Navbar } from './components/Navbar';
+import { Home } from './pages/Home';
+import { Category } from './pages/Category';
+import { FavoriteProvider } from './context/FavoriteContext';
 
-const Navbar = () => {
+function App() {
   return (
-    <nav className="bg-orange-500 p-4 text-white flex justify-between items-center shadow-md">
-      <Link to="/" className="text-2xl font-black italic">Home</Link>
-    </nav>
-  );
-};
-
-export default function App() {
-  return (
-      <Router>
+    <FavoriteProvider>
+      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/category/:name" element={<Category />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
+    </FavoriteProvider>
   );
 }
+export default App;
