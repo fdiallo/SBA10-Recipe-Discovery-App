@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 import { Category } from './pages/Category';
+import { RecipeDetails } from './pages/RecipeDetails';
 import { Favorites } from './pages/Favorites';
 import { FavoriteProvider } from './context/FavoriteContext';
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/category/:name" element={<Category />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/recipe/:id" element={<RecipeDetails />} />
         </Routes>
       </BrowserRouter>
     </FavoriteProvider>
