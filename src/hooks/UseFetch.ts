@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-
 /**
  * Handles API calls, loading states, and error catching.
  */
